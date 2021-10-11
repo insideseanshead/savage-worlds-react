@@ -27,15 +27,15 @@ const TargetCalculator = () => {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Target Number</Form.Label>
           <Form.Control type="number" value={target} onChange={(e)=>onChange(e.target.value)} />
-          <Form.Text className="text-muted">
-            Enter target for roll here.
-          </Form.Text>
         </Form.Group>
-      
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-        {hitLevel}
+        
+        <ul className="targetList">
+          {
+            hitLevel.map(function(level,i){
+              return <li key={i}>{level}</li>
+            })
+          }
+        </ul>
         
       </Form>
     )
