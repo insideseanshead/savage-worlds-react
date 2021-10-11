@@ -6,7 +6,7 @@ const TargetCalculator = () => {
     const [target, setTarget] = useState(4)
     //On Change Event
     const onChange = (e) => {
-        setTarget(e)
+        setTarget(parseInt(e, 10))
     }
     // Function to set Array 
     const hitCalculator = () => {
@@ -35,6 +35,8 @@ const TargetCalculator = () => {
         <Button variant="primary" type="submit">
           Submit
         </Button>
+        {hitLevel}
+        
       </Form>
     )
 }
