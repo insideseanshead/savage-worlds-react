@@ -5,12 +5,6 @@ import './App.css'
 import TargetCalculator from "./components/TargetCalculator";
 
 function App() {
-  // const [target, setTarget] = useState('4')
-
-  // const onChange = (e) =>{
-  //   setTarget(e)
-  // }
-
   return (
     <div className="App">
       {/* <input
