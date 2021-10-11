@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Hero from './components/Hero/'
 import { Container } from "react-bootstrap";
 import './App.css'
+import TargetCalculator from "./components/TargetCalculator";
 
 function App() {
+  // const [target, setTarget] = useState('4')
+
+  // const onChange = (e) =>{
+  //   setTarget(e)
+  // }
+
   return (
     <div className="App">
-      <h1>hi</h1>
+      {/* <input
+          type="number"
+          className="form-control"
+          
+          value={target}
+          onChange={(e)=> onChange(e.target.value)}
+          autoFocus
+        /> */}
+
+      <TargetCalculator />
     </div>
   );
 }
