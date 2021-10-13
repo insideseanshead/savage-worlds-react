@@ -21,7 +21,7 @@ const TargetCalculator = () => {
   };
   const hitLevel = hitCalculator();
 
-  document.querySelectorAll('.targetNumber').forEach()
+  document.querySelectorAll('.targetNumber')
 
   console.log(hitLevel);
 
