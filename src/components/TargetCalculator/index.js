@@ -21,10 +21,6 @@ const TargetCalculator = () => {
   };
   const hitLevel = hitCalculator();
 
-  const targets = document.querySelectorAll(".targetNumber");
-
-  console.log(hitLevel);
-
   return (
       <Card id='targetCard' >
         <Card.Body>

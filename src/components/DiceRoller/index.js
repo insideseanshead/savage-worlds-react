@@ -1,9 +1,10 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import './style.css'
 
 const DiceRoller = () => {
     return (
-        <Card style='16rem'>
+        <Card id='diceRollerCard'>
             <Card.Body>
                 <Card.Title>Dice</Card.Title>
             </Card.Body>
