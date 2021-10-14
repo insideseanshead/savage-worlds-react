@@ -15,11 +15,30 @@ const DiceRoller = () => {
     
     // Create dice logic dice explode on max
     const rollDice = (dice) => {
-        let rolled = 0
-        for(let i =0; rolled === i*dice; i++){
-            rolled = rolled + Math.ceil(Math.random()*dice) 
+        // character stat die
+        let statData = []
+        let charRoll = 0
+        // wild die 
+        let wildData=[];
+        let wildRoll = 0
+        // Character roll
+        for(let i =0; charRoll === i*dice; i++){
+            charRoll = charRoll + Math.ceil(Math.random()*dice)
+            statData.push(charRoll)
+            console.log(statData)
         }
-        return rolled
+        // Wild Roll
+        for(let i = 0; wildRoll === i*6; i++){
+            wildRoll = wildRoll + Math.ceil(Math.random()*6)
+            wildData.push(wildRoll)
+            console.log(wildData)
+        }
+        // Pick highest number
+        if(charRoll>=wildRoll){
+            return charRoll
+        } else {
+            return wildRoll
+        }
     }
     console.log(rollDice(d4))
    
