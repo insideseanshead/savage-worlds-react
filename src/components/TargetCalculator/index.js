@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import './style.css'
+import "./style.css";
 
 const TargetCalculator = () => {
   // Set Target Number
@@ -21,29 +21,31 @@ const TargetCalculator = () => {
   };
   const hitLevel = hitCalculator();
 
-  document.querySelectorAll('.targetNumber')
+  const targets = document.querySelectorAll(".targetNumber");
 
   console.log(hitLevel);
 
   return (
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Target Number</Form.Label>
-        <Form.Control
-          type="number"
-          value={target}
-          onChange={(e) => onChange(e.target.value)}
-        />
-      </Form.Group>
-
+    <div className="targetNumberCalculator">
+      <Form>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Target Number</Form.Label>
+          <br />
+          <Form.Control
+            type="number"
+            value={target}
+            onChange={(e) => onChange(e.target.value)}
+          />
+        </Form.Group>
+      </Form>
       <ul className="targetList">
-        {hitLevel.map((level, i) => (
-          <li key={i} className="targetNumber" id={i}>
-            {i + 1}: {level}
-          </li>
-        ))}
-      </ul>
-    </Form>
+          {hitLevel.map((level, i) => (
+            <li key={i} className="targetList" id={i}>
+              {i + 1}: <span className="targetNumber">{level}</span>
+            </li>
+          ))}
+        </ul>
+    </div>
   );
 };
 

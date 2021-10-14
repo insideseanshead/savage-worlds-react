@@ -1,3 +1,18 @@
 .targetList {
     list-style-type: none;
+    width: 100px;
+    padding: 0;
+}
+
+.targetList li {
+    background-color: lightblue;
+    padding: 0 10px 0 10px
+}
+
+.targetList li:nth-child(odd) {
+    background-color: white;
+}
+
+.targetNumber {
+    float: right
 }
