@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Card } from "react-bootstrap";
 import "./style.css";
 
 const TargetCalculator = () => {
@@ -26,26 +26,29 @@ const TargetCalculator = () => {
   console.log(hitLevel);
 
   return (
-    <div className="targetNumberCalculator">
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Target Number</Form.Label>
-          <br />
-          <Form.Control
-            type="number"
-            value={target}
-            onChange={(e) => onChange(e.target.value)}
-          />
-        </Form.Group>
-      </Form>
-      <ul className="targetList">
-          {hitLevel.map((level, i) => (
-            <li key={i} className="targetList" id={i}>
-              {i + 1}: <span className="targetNumber">{level}</span>
-            </li>
-          ))}
-        </ul>
-    </div>
+      <Card id='targetCard' >
+        <Card.Body>
+          <Card.Title>Target</Card.Title>
+          <Card.Subtitle className='mb-2 text-muted'>Levels of Success</Card.Subtitle>
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              
+              <Form.Control
+                type="number"
+                value={target}
+                onChange={(e) => onChange(e.target.value)}
+              />
+            </Form.Group>
+          </Form>
+          <ul className="targetList">
+            {hitLevel.map((level, i) => (
+              <li key={i} className="targetList text-muted" id={i}>
+                {i + 1}: <span className="targetNumber">{level}</span>
+              </li>
+            ))}
+          </ul>
+        </Card.Body>
+      </Card>
   );
 };
 
