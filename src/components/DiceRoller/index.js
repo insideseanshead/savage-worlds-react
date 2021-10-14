@@ -15,16 +15,11 @@ const DiceRoller = () => {
     
     // Create dice logic dice explode on max
     const rollDice = (dice) => {
-        let rolled = Math.ceil(Math.random()*dice) 
-        console.log(rolled)
-        let reRolled = 1;
-        if(rolled === dice || reRolled === dice) {
-            reRolled = Math.ceil(Math.random()*dice)
-            console.log(reRolled)
-            rolled = rolled + reRolled;
-        } else {
-            return rolled
+        let rolled = 0
+        for(let i =0; rolled === i*dice; i++){
+            rolled = rolled + Math.ceil(Math.random()*dice) 
         }
+        return rolled
     }
     console.log(rollDice(d4))
    
