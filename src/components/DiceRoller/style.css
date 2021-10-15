@@ -1,3 +1,20 @@
 #diceRollerCard {
-    width: 16rem
+    width: 16rem;
+    
+}
+
+.diceButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.rollButton {
+    margin: 10px;
+}
+
+.rolledNumber {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 64px;
+    text-align: center;
 }
