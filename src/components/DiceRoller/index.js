@@ -5,7 +5,7 @@ import "./style.css";
 const DiceRoller = () => {
   // Set State
   const [roll, setRoll] = useState(0);
-    let finalRoll='0'
+  
   // Set Dice Variables
   const d4 = 4;
   const d6 = 6;
@@ -36,11 +36,11 @@ const DiceRoller = () => {
     }
     // Pick highest number
     if (charRoll >= wildRoll) {
-      finalRoll= charRoll;
+      return charRoll;
     } else if (charRoll < wildRoll) {
-      finalRoll= wildRoll;
+      return wildRoll;
     } else {
-      finalRoll= "Crit Fail";
+      return "Crit Fail";
     }
   };
 
@@ -51,7 +51,7 @@ const DiceRoller = () => {
       <Card.Body>
         <Card.Title>Dice</Card.Title>
         <div className="diceButtons">
-          <Button onClick={rollDice(d4)} variant="warning" id="rollD4" className="rollButton">
+          <Button onClick={() => rollDice(d4)} variant="warning" id="rollD4" className="rollButton">
             D4
           </Button>
           <Button variant="warning" id="rollD6" className="rollButton">
@@ -67,7 +67,7 @@ const DiceRoller = () => {
             D12
           </Button>
         </div>
-        <div className="rolledNumber">{finalRoll}</div>
+        <div className="rolledNumber">{roll}</div>
       </Card.Body>
     </Card>
   );
