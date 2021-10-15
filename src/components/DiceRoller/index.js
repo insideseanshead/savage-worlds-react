@@ -35,9 +35,11 @@ const DiceRoller = () => {
         }
         // Pick highest number
         if(charRoll>=wildRoll){
-            return charRoll
+            return charRoll      
+        } else if(charRoll < wildRoll) {
+            return wildRoll    
         } else {
-            return wildRoll
+            return "Crit Fail"
         }
     }
     console.log(rollDice(d4))
@@ -47,6 +49,7 @@ const DiceRoller = () => {
         <Card id='diceRollerCard'>
             <Card.Body>
                 <Card.Title>Dice</Card.Title>
+                {roll}
             </Card.Body>
         </Card>
     )
